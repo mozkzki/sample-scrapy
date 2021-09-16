@@ -2,10 +2,10 @@
 
 Scrapyのサンプルプロジェクト。
 
-| No | 種別 | Spider名 | Spiderファイル |
-|--|--|--|--|
-| 1 | 手動クローリング | topics | main/yahoo_japan/spiders/topics.py |
-| 2 | 自動クローリング | news_crawl | main/yahoo_japan/spiders/news_crawl.py |
+| No | 種別 | 起動方法 | Spider名 | Spiderファイル |
+|--|--|--|--|--|
+| 1 | 手動クローリング | make start1 | topics | main/yahoo_japan/spiders/topics.py |
+| 2 | 自動クローリング | make start2 | news_crawl | main/yahoo_japan/spiders/news_crawl.py |
 
 ※ 2021/08/31 動作確認 (サイト変更により動かなくなる可能性あり)
 ## 参考サイト
@@ -14,43 +14,12 @@ Scrapyのサンプルプロジェクト。
 
 ## 開発環境
 
-VSCode Remote Container版 (Dockerが必要)。Pythonの仮想環境は使わない。
-
-| ツール種類 | ツール名 |
-|--|--|
-| パッケージ管理 | [pip](https://kurozumi.github.io/pip/index.html) |
-| テストフレームワーク | [pytest](https://docs.pytest.org/en/6.2.x/) |
-| リンター | [flake8](https://flake8.pycqa.org/en/latest/) |
-| フォーマッター | [black](https://github.com/psf/black) |
-| 型チェック | [mypy](https://mypy.readthedocs.io/en/stable/) |
-
-なお、dev-containerはMSの[これ](https://github.com/microsoft/vscode-dev-containers/tree/v0.191.0/containers/python-3)がベース。
-
-### 導入
-
-1. VSCodeに機能拡張「Remote - Containers」をインストール
-1. `git clone git@github.com:mozkzki/template-python-simple-with-dev-container.git hoge` (※hogeはチェックアウト先ディレクトリ)
-1. このプロジェクトを開く
-1. VSCodeの画面左下の緑ゾーンをクリック
-1. `Reopen in Container`をクリック
-1. コンテナ内でVSCodeが開いたら準備完了 (初回はビルドがあるので時間かかる)
-
-### Shell
-
-- zsh, preztoセットアップ済み
-- プロンプトでpowerlevel10kを使う場合は下記で設定する
-
-```zsh
-prompt -s powerlevel10k
-p10k configure
-```
-
-### dotfiles
-
-- 下記を配置済み
-  - https://github.com/mozkzki/settings/tree/master/devcontainer/dotfiles
+- 始め方は下記参照 (下記がベース)
+  - [mozkzki/template-python-simple-with-dev-container](https://github.com/mozkzki/template-python-simple-with-dev-container)
 
 ## 開発方法
+
+※ 以降のコマンドは、devcontainer (Dockerコンテナ) を起動し、そこで実行
 
 ### とりあえず一通り動確したい時
 
@@ -152,9 +121,5 @@ WARNING: Target directory /home/../. already exists. Specify --upgrade to force 
 
 ## 参考
 
-- [【2020年1月】令和だし本格的にVSCodeのRemote Containerで、爆速の"開発コンテナ"始めよう - Qiita](https://qiita.com/koinori/items/084a0770c1f9e72e0c14)
-- [VSCode Remote Containersに自分のdotfilesを持ち込む - Kesinの知見置き場](https://kesin.hatenablog.com/entry/2020/07/10/083000)
-  - Remote Container拡張の設定でdotfilesをコピーする機能があるが使ってない
-  - Dockerfileで`git clone`している
 - [Configuration — pytest documentation](https://docs.pytest.org/en/6.2.x/customize.html)
 - [Usage and Invocations — pytest documentation](https://docs.pytest.org/en/6.2.x/usage.html)
