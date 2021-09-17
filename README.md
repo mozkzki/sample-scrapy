@@ -11,6 +11,7 @@ Scrapyのサンプルプロジェクト。
 ## 参考サイト
 
 - [Python, Scrapyの使い方（Webクローリング、スクレイピング） | note.nkmk.me](https://note.nkmk.me/python-scrapy-tutorial/)
+- [10分で理解する Scrapy - Qiita](https://qiita.com/Chanmoro/items/f4df85eb73b18d902739)
 
 ## 開発環境
 
